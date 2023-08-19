@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Todolist} from "./Todolist";
 
+export type filterType = 'All' | 'Active'| 'Completed'
 function App() {
     const truck1= 'What to learn'
 
@@ -13,15 +14,14 @@ let [tasks, setTasks]= useState([
     {id:3, title: "ReacktJS", isDone: false },
     {id:4, title: "ReacktJS", isDone: false },
 ])
+
 const removeTask =(TaskId:number)=>{
             setTasks(tasks.filter((el)=>(el.id!==TaskId)))
 }
-const tasksFilter= (filterKey:string)=>{
-console.log(filterKey)
-}
+
     return (
         <div className="App">
-            <Todolist truck= {truck1} tasks={tasks} removeTask={removeTask} tasksFilter={tasksFilter}/>
+            <Todolist truck= {truck1} removeTask={removeTask} tasks={tasks}/>
         </div>
     );
 }
