@@ -15,8 +15,8 @@ let [tasks, setTasks]= useState([
     {id:4, title: "ReacktJS", isDone: false },
 ])
 
-const removeTask =(TaskId:number)=>{
-            setTasks(tasks.filter((el)=>(el.id!==TaskId)))
+const removeTask =(id:number)=>{
+            setTasks(tasks.filter((el)=>(el.id!==id)))
 }
 
     return (
