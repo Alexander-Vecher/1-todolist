@@ -21,10 +21,17 @@ export function Todolist(props: PropsType) {
     }
      const FilterFoo=()=> {
 
-        switch (filter){
-            case "Active": {return props.tasks.filter(el => !el.isDone)}
-            case "Completed": {return props.tasks.filter(el => el.isDone)}
-            case "All": return props.tasks}
+        switch (filter) {
+            case "Active": {
+                return props.tasks.filter(el => !el.isDone)
+            }
+            case "Completed": {
+                return props.tasks.filter(el => el.isDone)
+            }
+            case "All": {
+                return props.tasks
+            }
+        }
 
 
 
