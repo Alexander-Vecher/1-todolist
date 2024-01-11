@@ -1,13 +1,22 @@
 import React, {FC} from "react";
 
+export type TaskType={
+    id:number
+    title:string
+    isDone:boolean
+}
 type TodoListPropsType = {
     title:string
+    task:Array<TaskType>
 }
 
-const TodoList:FC<TodoListPropsType> = (props:TodoListPropsType) => {
+const TodoList:FC<TodoListPropsType> = ({title,tasks}) => {
+
+/*    const title=props.title
+    const {title,tasks} = props*/
     return(
     <div className='todolist'>
-        <h3>{props.title}</h3>
+        <h3>{title}</h3>
         <div>
             <input/>
             <button>+</button>
