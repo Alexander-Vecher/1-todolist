@@ -10,10 +10,12 @@ type TodoListPropsType = {
     task:Array<TaskType>
 }
 
-const TodoList:FC<TodoListPropsType> = ({title,tasks}) => {
+const TodoList:FC<TodoListPropsType> = ({title,task}) => {
 
 /*    const title=props.title
+/*    const tasks=props.tasks
     const {title,tasks} = props*/
+
     return(
     <div className='todolist'>
         <h3>{title}</h3>
@@ -22,9 +24,10 @@ const TodoList:FC<TodoListPropsType> = ({title,tasks}) => {
             <button>+</button>
         </div>
         <ul>
-            <li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
-            <li><input type="checkbox" checked={true}/> <span>JS</span></li>
-            <li><input type="checkbox" checked={false}/> <span>React</span></li>
+            <li><input type="checkbox" checked={task[0].isDone}/> <span>{task[0].title}</span></li>
+            <li><input type="checkbox" checked={task[1].isDone}/> <span>{task[1].title}</span></li>
+            <li><input type="checkbox" checked={task[2].isDone}/> <span>{task[2].title}</span></li>
+            <li><input type="checkbox" checked={task[3].isDone}/> <span>{task[3].title}</span></li>
         </ul>
         <div>
             <button>All</button>
